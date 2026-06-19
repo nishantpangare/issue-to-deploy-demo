@@ -1,2 +1,3 @@
-# issue-to-deploy-demo
-Capstone Project - Issue-To-Deploy Project
+# Issue-to-Deploy Demo App
+
+A simple Flask app used as the target for the Issue-to-Deploy agent.
