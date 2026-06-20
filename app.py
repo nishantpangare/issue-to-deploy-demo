@@ -16,9 +16,16 @@ def discount():
 
 @app.route("/divide")
 def divide():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
-    return jsonify({"result": a / b})
+    try:
+        a = int(request.args.get("a"))
+        b = int(request.args.get("b"))
+        if b == 0:
+            return jsonify({"error": "Cannot divide by zero"}), 400
+        return jsonify({"result": a / b})
+    except ValueError:
+        return jsonify({"error": "Invalid input: 'a' and 'b' must be integers"}), 400
+    except TypeError:
+        return jsonify({"error": "Missing input: 'a' and 'b' are required"}), 400
 
 if __name__ == "__main__":
     app.run(debug=True)
