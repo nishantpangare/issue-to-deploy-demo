@@ -1,6 +1,8 @@
 def calculate_discount(price, discount_percent):
     # BUG: price comes in as string, no type conversion
-    return price - (price * discount_percent / 100)
+    # FIX: Convert price to float before calculation
+    numeric_price = float(price)
+    return numeric_price - (numeric_price * discount_percent / 100)
 
 def get_user(user_id):
     users = {
@@ -8,4 +10,4 @@ def get_user(user_id):
         2: {"name": "Bob", "email": "bob@example.com"}
     }
     # BUG: no handling if user_id not found
-    return users[user_id]
+    return users.get(user_id)
