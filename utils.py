@@ -7,5 +7,5 @@ def get_user(user_id):
         1: {"name": "Alice", "email": "alice@example.com"},
         2: {"name": "Bob", "email": "bob@example.com"}
     }
-    # BUG: no handling if user_id not found
-    return users[user_id]
+    # Fix: Use .get() to safely retrieve user, returning None if not found
+    return users.get(user_id)
