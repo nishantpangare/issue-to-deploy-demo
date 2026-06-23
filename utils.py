@@ -1,5 +1,6 @@
 def calculate_discount(price, discount_percent):
     # BUG: price comes in as string, no type conversion
+    price = float(price) # Convert price to float for arithmetic operations
     return price - (price * discount_percent / 100)
 
 def get_user(user_id):
