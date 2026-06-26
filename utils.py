@@ -8,4 +8,5 @@ def get_user(user_id):
         2: {"name": "Bob", "email": "bob@example.com"}
     }
     # BUG: no handling if user_id not found
-    return users[user_id]
+    # Fix: Return None if user_id is not found in the users dictionary
+    return users.get(user_id)
